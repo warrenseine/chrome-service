@@ -5,7 +5,7 @@ Capture websites.
 
 # Getting started
 
-* Under Linux:
+* Under Ubuntu 16.10:
 
 ```
 sudo apt-get update
@@ -17,3 +17,8 @@ npm start
 # Usage
 
 * Open `http://localhost:3000/?url=http://google.com`.
+
+# Contributing
+
+* `npm run xfvb` to start the display server.
+* `npm run watch` to monitor changes.

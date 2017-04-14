@@ -1,7 +1,7 @@
 {
-  "name": "screener",
+  "name": "electroshot-service",
   "version": "1.0.0",
-  "description": "Website screenshoter",
+  "description": "Electroshot as a Service",
   "main": "index.js",
   "scripts": {
     "xvfb": "Xvfb -ac -screen scrn 1280x2000x24 :9.0&",

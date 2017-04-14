@@ -1,0 +1,19 @@
+{
+  "name": "screener",
+  "version": "1.0.0",
+  "description": "Website screenshoter",
+  "main": "index.js",
+  "scripts": {
+    "xvfb": "Xvfb -ac -screen scrn 1280x2000x24 :9.0&",
+    "start": "npm run xvfb; DISPLAY=:9.0 forever start index.js",
+    "stop": "forever stop index.js; killall Xvfb",
+    "watch": "DISPLAY=:9.0 nodemon index.js"
+  },
+  "author": "Warren Seine",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "forever": "^0.15.3",
+    "nodemon": "^1.11.0"
+  }
+}

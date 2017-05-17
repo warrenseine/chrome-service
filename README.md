@@ -1,7 +1,7 @@
-Electroshot Service
-===================
+Chrome Service
+==============
 
-Capture websites.
+Capture websites with Chrome Headless.
 
 # Getting started
 
@@ -9,7 +9,9 @@ Capture websites.
 
 ```
 sudo apt-get update
-sudo apt-get install -y libgtk2.0-0 libgconf-2-4 libasound2 libxtst6 libxss1 libnss3 xvfb ttf-mscorefonts-installer
+wget https://dl.google.com/linux/direct/google-chrome-unstable_current_amd64.deb
+sudo dpkg -i google-chrome-unstable_current_amd64.deb
+sudo apt-get install -y -f
 npm install
 npm start
 ```
@@ -20,5 +22,4 @@ npm start
 
 # Contributing
 
-* `npm run xfvb` to start the display server.
 * `npm run watch` to monitor changes.

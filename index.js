@@ -4,22 +4,25 @@ const path = require('path')
 const fs = require('fs')
 const url = require('url')
 
+let bin = process.env.CHROME_BIN || 'google-chrome'
+
+const tmpDir = 'tmp'
+
+fs.mkdir(tmpDir, () => {})
+
 let app = express()
 
 app.get('/', function (req, res) {
   let target = url.parse(req.query.url)
   let tmpFileName = `screenshot${Math.floor(Math.random() * 10000)}.png`
-  let tmpFilePath = path.join(__dirname, 'tmp', tmpFileName)
-  let bin = 'electroshot'
+  let tmpFilePath = path.join(__dirname, tmpDir, tmpFileName)
   let args = [
-    target.href,
-    '640x480',
-    '--delay',
-    '5000',
-    '--out',
-    'tmp',
-    '--filename',
-    tmpFileName
+    '--headless',
+    '--disable-gpu',
+    '--window-size=640x480',
+    '--hide-scrollbars',
+    '--screenshot=' + tmpFilePath,
+    target.href
   ]
   console.log('Querying:', req.query.url)
   console.log('Running:', bin, args)

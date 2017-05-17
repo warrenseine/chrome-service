@@ -1,16 +1,16 @@
 {
-  "name": "electroshot-service",
+  "name": "chrome-service",
   "version": "1.0.0",
-  "description": "Electroshot as a Service",
+  "description": "Chrome as a Service",
   "main": "index.js",
   "scripts": {
-    "xvfb": "Xvfb -ac -screen scrn 1280x2000x24 :9.0&",
-    "start": "npm run xvfb; DISPLAY=:9.0 forever start index.js",
-    "stop": "forever stop index.js; killall Xvfb",
-    "watch": "DISPLAY=:9.0 nodemon index.js"
+    "start": "forever start index.js",
+    "stop": "forever stop index.js",
+    "watch": "nodemon index.js"
   },
   "author": "Warren Seine",
   "license": "ISC",
+  "repository": "https://github.com/w.seine/chrome-service",
   "dependencies": {
     "express": "^4.15.2",
     "forever": "^0.15.3",
